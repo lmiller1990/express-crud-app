@@ -1,0 +1,13 @@
+<% include header %>
+
+<h2>Welcome to learn about me.</h2>
+
+<% users.forEach(function(user) { %>
+  <a href="/users/<%= user.username %>">
+  <%= user.name() %>
+  <% if (user.bio) { %>
+    Bio: <%= user.bio %>
+  <% } %>
+<% }) %>
+
+<% include footer %>

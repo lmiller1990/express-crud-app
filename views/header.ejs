@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<% if (currentUser) { %> 
+  <h4>Hello, <%= currentUser %></h4>
+<% } else { %>
+<a href="/login">Login</a>
+<a href='/signup'>Signup</a>
+<% } %>
+
+<% errors.forEach(function(error) { %>
+  <%= error %>
+<% }) %>
+
+<% infos.forEach(function(info) { %>
+  <%= info %>
+<% }) %>
