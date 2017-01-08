@@ -11,6 +11,16 @@ router.use(function(req, res, next) {
   next()
 })
 
+router.get('/login', function(req, res, next) {
+  res.render('login')
+})
+
+router.post('/login', passport.authenticate('login', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+  failureFlash: true
+}))
+
 router.get('/', function(req, res, next) {
   User.find()
   .sort({ createdAt: 'descending' })
